@@ -8,7 +8,8 @@ import os
 
 buy_log = open("purchase_log.txt", "w")
 sell_log = open("sell_log.txt", "w")
-
+buy_log.close()
+sell_log.close()
 
 class Coin:
     def __init__(self, name):
@@ -105,6 +106,7 @@ while True:
                 print(purchase_df)
                 print("-"*40)
                 for check_pur in list(purchase_df.index):
+                    buy_log = open("purchase_log.txt", "a")
                     if not(check_pur in purchased_coin):
                         '''
                         buy coin
@@ -116,6 +118,7 @@ while True:
                         coins[check_pur].print(buy_log)
                         coins[check_pur].print_screen()
                         purchased_coin[check_pur] = coins[check_pur]
+                    buy_log.close()
         list_of_purchased_coin = list(purchased_coin.keys())
         if len(list_of_purchased_coin) != 0:
             price_dic = pyupbit.get_current_price(list_of_purchased_coin)
@@ -131,6 +134,7 @@ while True:
                     '''
                     coin sell
                     '''
+                    sell_log = open("sell_log.txt", "w")
                     check_price.is_sell = True
                     check_price.sell = pyupbit.get_current_price(name)
                     check_price.print(sell_log)
@@ -140,6 +144,7 @@ while True:
                     check_price.print_screen()
                     check_price.initialize()
                     list_to_del.append(name)
+                    sell_log.close()
         for name in list_to_del:
             purchased_coin.pop(name)
         time.sleep(0.5)
