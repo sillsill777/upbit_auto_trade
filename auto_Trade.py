@@ -84,7 +84,8 @@ for item in coin_list:
 
 current_time = datetime.datetime.now()
 delta30 = datetime.timedelta(seconds=30)
-target_time = current_time + delta30
+delta_1min = datetime.timedelta(minutes=1)
+target_time = current_time + delta_1min
 delta1 = datetime.timedelta(seconds=1)
 delta_5min = datetime.timedelta(minutes=5)
 target_purchased_coin_time = current_time + delta_5min
@@ -102,21 +103,32 @@ def get_cur_price():
 
 coin_df = pd.DataFrame(list(get_cur_price().items()))
 coin_df.set_index([0], inplace=True)
-coin_df.rename({1: "prev"}, axis=1, inplace=True)
+coin_df.rename({1: "prev1"}, axis=1, inplace=True)
+time.sleep(60)
+price_dic = get_cur_price()
+coin_df['prev2'] = pd.DataFrame(price_dic.values(), index=price_dic.keys())
+time.sleep(60)
+price_dic = get_cur_price()
+coin_df['prev3'] = pd.DataFrame(price_dic.values(), index=price_dic.keys())
 print(coin_df)
 threshHold = 1.015
-
+threshHold2 = 1.005
 while True:
     try:
         current_time = datetime.datetime.now()
         if (current_time >= (target_time-delta1)) & (current_time <= (target_time+delta1)):
             price_dic = get_cur_price()
             current_time = datetime.datetime.now()
-            target_time = current_time + delta30
+            target_time = current_time + delta_1min
             coin_df['cur'] = pd.DataFrame(price_dic.values(), index=price_dic.keys())
-            coin_df['ratio'] = coin_df['cur']/coin_df['prev']
-            purchase_df = coin_df[coin_df['ratio'] > threshHold]
-            coin_df['prev'] = coin_df['cur']
+            coin_df['ratio1'] = (coin_df['prev2']/coin_df['prev1']) > threshHold
+            coin_df['ratio2'] = (coin_df['prev3']/coin_df['prev2']) > threshHold2
+            coin_df['ratio3'] = (coin_df['cur']/coin_df['prev3']) > threshHold2
+            coin_df['target'] = coin_df['ratio1'] & coin_df['ratio2'] & coin_df['ratio3']
+            purchase_df = coin_df[coin_df['target']]
+            coin_df['prev1'] = coin_df['prev2']
+            coin_df['prev2'] = coin_df['prev3']
+            coin_df['prev3'] = coin_df['cur']
 
             if not purchase_df.empty:
                 print("-"*40)
