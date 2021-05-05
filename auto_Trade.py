@@ -110,9 +110,12 @@ coin_df['prev2'] = pd.DataFrame(price_dic.values(), index=price_dic.keys())
 time.sleep(60)
 price_dic = get_cur_price()
 coin_df['prev3'] = pd.DataFrame(price_dic.values(), index=price_dic.keys())
+time.sleep(60)
+price_dic = get_cur_price()
+coin_df['prev4'] = pd.DataFrame(price_dic.values(), index=price_dic.keys())
 print(coin_df)
-threshHold = 1.015
-threshHold2 = 1.005
+threshHold = 1.01
+threshHold2 = 1.002
 while True:
     try:
         current_time = datetime.datetime.now()
@@ -123,13 +126,15 @@ while True:
             coin_df['cur'] = pd.DataFrame(price_dic.values(), index=price_dic.keys())
             coin_df['ratio1'] = (coin_df['prev2']/coin_df['prev1']) > threshHold
             coin_df['ratio2'] = (coin_df['prev3']/coin_df['prev2']) > threshHold2
-            coin_df['ratio3'] = (coin_df['cur']/coin_df['prev3']) > threshHold2
-            coin_df['target'] = coin_df['ratio1'] & coin_df['ratio2'] & coin_df['ratio3']
+            coin_df['ratio3'] = (coin_df['prev4']/coin_df['prev3']) > threshHold2
+            coin_df['ratio4'] = (coin_df['cur'] / coin_df['prev4']) > threshHold2
+
+            coin_df['target'] = coin_df['ratio1'] & ((coin_df['ratio2']*1 + coin_df['ratio3']*1 + coin_df['ratio4']*1)>=2)
             purchase_df = coin_df[coin_df['target']]
             coin_df['prev1'] = coin_df['prev2']
             coin_df['prev2'] = coin_df['prev3']
-            coin_df['prev3'] = coin_df['cur']
-
+            coin_df['prev3'] = coin_df['prev4']
+            coin_df['prev4'] = coin_df['cur']
             if not purchase_df.empty:
                 print("-"*40)
                 print(purchase_df)
