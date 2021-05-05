@@ -114,7 +114,7 @@ time.sleep(60)
 price_dic = get_cur_price()
 coin_df['prev4'] = pd.DataFrame(price_dic.values(), index=price_dic.keys())
 print(coin_df)
-threshHold = 1.007
+threshHold = 1.01
 threshHold2 = 1.002
 
 current_time = datetime.datetime.now()
