@@ -85,8 +85,8 @@ for item in coin_list:
 current_time = datetime.datetime.now()
 delta30 = datetime.timedelta(seconds=30)
 delta_1min = datetime.timedelta(minutes=1)
-target_time = current_time + delta_1min
 delta1 = datetime.timedelta(seconds=1)
+delta2 = datetime.timedelta(seconds=2)
 delta_5min = datetime.timedelta(minutes=5)
 target_purchased_coin_time = current_time + delta_5min
 
@@ -114,12 +114,15 @@ time.sleep(60)
 price_dic = get_cur_price()
 coin_df['prev4'] = pd.DataFrame(price_dic.values(), index=price_dic.keys())
 print(coin_df)
-threshHold = 1.01
+threshHold = 1.007
 threshHold2 = 1.002
+
+current_time = datetime.datetime.now()
+target_time = current_time + delta_1min
 while True:
     try:
         current_time = datetime.datetime.now()
-        if (current_time >= (target_time-delta1)) & (current_time <= (target_time+delta1)):
+        if (current_time >= (target_time-delta2)) & (current_time <= (target_time+delta2)):
             price_dic = get_cur_price()
             current_time = datetime.datetime.now()
             target_time = current_time + delta_1min
@@ -129,7 +132,8 @@ while True:
             coin_df['ratio3'] = (coin_df['prev4']/coin_df['prev3']) > threshHold2
             coin_df['ratio4'] = (coin_df['cur'] / coin_df['prev4']) > threshHold2
 
-            coin_df['target'] = coin_df['ratio1'] & ((coin_df['ratio2']*1 + coin_df['ratio3']*1 + coin_df['ratio4']*1)>=2)
+            coin_df['target'] = coin_df['ratio1'] & ((coin_df['ratio2']*1 + coin_df['ratio3']*1 +
+                                                      coin_df['ratio4']*1) >= 2)
             purchase_df = coin_df[coin_df['target']]
             coin_df['prev1'] = coin_df['prev2']
             coin_df['prev2'] = coin_df['prev3']

@@ -1,0 +1,25 @@
+--------------------------------------------------
+   name: REP        purchase_time: 2021-05-05 22:13:57.212890
+     purchase_price: 51760.0      current_price: 51760.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: GAS        purchase_time: 2021-05-05 22:13:57.212890
+     purchase_price: 18480.0      current_price: 18480.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: ELF        purchase_time: 2021-05-05 22:13:57.212890
+     purchase_price: 506.0      current_price: 506.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: DOT        purchase_time: 2021-05-05 22:13:57.212890
+     purchase_price: 46900.0      current_price: 46900.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: AXS        purchase_time: 2021-05-05 22:13:57.212890
+     purchase_price: 10220.0      current_price: 10220.0       ratio: 1.0     max_ratio:1 
+
+
