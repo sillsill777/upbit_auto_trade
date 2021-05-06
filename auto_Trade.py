@@ -47,7 +47,7 @@ class Coin:
 
     def init_df(self, lp):
         self.df = pd.DataFrame([[self.purchase, self.price, self.ratio, self.max_ratio, self.is_sell, self.sell,
-                                 lp[1]/lp[0], lp[2]/lp[1], lp[3]/lp[2], lp[4]/lp[3], lp[0], lp[1], lp[2], lp[3]]],
+                                 lp[1]/lp[0], lp[2]/lp[1], lp[3]/lp[2], self.price/lp[3], lp[0], lp[1], lp[2], lp[3]]],
                                index=[self.purchasetime.strftime("%Y/%m/%d_%H:%M:%S")],
                                columns=['purchase', 'cur_price', 'ratio', 'max_ratio', 'is_sell', 'sell_price',
                                         'r1', 'r2', 'r3', 'r4', 'p1', 'p2', 'p3', 'p4'])
@@ -59,7 +59,7 @@ class Coin:
     def init_update_df(self, cur_time, lp):
         self.df.loc[cur_time] = pd.Series(
             [self.purchase, self.price, self.ratio, self.max_ratio, self.is_sell, self.sell,
-             lp[1]/lp[0], lp[2]/lp[1], lp[3]/lp[2], lp[4]/lp[3], lp[0], lp[1], lp[2], lp[3]],
+             lp[1]/lp[0], lp[2]/lp[1], lp[3]/lp[2], self.price/lp[3], lp[0], lp[1], lp[2], lp[3]],
             index=['purchase', 'cur_price', 'ratio', 'max_ratio', 'is_sell', 'sell_price',
                    'r1', 'r2', 'r3', 'r4', 'p1', 'p2', 'p3', 'p4'])
 
