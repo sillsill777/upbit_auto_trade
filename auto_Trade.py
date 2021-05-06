@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import time
-import os
 
 buy_log = open("purchase_log.txt", "w")
 sell_log = open("sell_log.txt", "w")
@@ -33,6 +32,7 @@ class Coin:
         self.sell = 0
         self.ratio = 0
         self.max_ratio = 1
+        self.max_time = 0
         self.purchasetime = datetime.datetime.now()
         self.df = pd.DataFrame()
         self.has_bought_past = False
@@ -46,21 +46,23 @@ class Coin:
         self.max_ratio = 1
 
     def init_df(self, lp):
-        self.df = pd.DataFrame([[self.purchase, self.price, self.ratio, self.max_ratio, self.is_sell, self.sell,
-                                 lp[1]/lp[0], lp[2]/lp[1], lp[3]/lp[2], self.price/lp[3], lp[0], lp[1], lp[2], lp[3]]],
+        self.df = pd.DataFrame([[self.purchase, self.price, self.ratio, self.max_ratio, self.max_time, self.is_sell,
+                                 self.sell, lp[1]/lp[0], lp[2]/lp[1], lp[3]/lp[2],
+                                 self.price/lp[3], lp[0], lp[1], lp[2], lp[3]]],
                                index=[self.purchasetime.strftime("%Y/%m/%d_%H:%M:%S")],
-                               columns=['purchase', 'cur_price', 'ratio', 'max_ratio', 'is_sell', 'sell_price',
+                            columns=['purchase', 'cur_price', 'ratio', 'max_ratio', 'max_time','is_sell', 'sell_price',
                                         'r1', 'r2', 'r3', 'r4', 'p1', 'p2', 'p3', 'p4'])
 
     def update_df(self, cur_time):
-        self.df.loc[cur_time] = pd.Series([self.purchase, self.price, self.ratio, self.max_ratio, self.is_sell, self.sell],
-                                        index=['purchase', 'cur_price', 'ratio', 'max_ratio', 'is_sell', 'sell_price'])
+        self.df.loc[cur_time] = pd.Series([self.purchase, self.price, self.ratio, self.max_ratio, self.max_time,
+                                           self.is_sell, self.sell],
+                            index=['purchase', 'cur_price', 'ratio', 'max_ratio', 'max_time', 'is_sell', 'sell_price'])
 
     def init_update_df(self, cur_time, lp):
         self.df.loc[cur_time] = pd.Series(
-            [self.purchase, self.price, self.ratio, self.max_ratio, self.is_sell, self.sell,
+            [self.purchase, self.price, self.ratio, self.max_ratio, self.max_time, self.is_sell, self.sell,
              lp[1]/lp[0], lp[2]/lp[1], lp[3]/lp[2], self.price/lp[3], lp[0], lp[1], lp[2], lp[3]],
-            index=['purchase', 'cur_price', 'ratio', 'max_ratio', 'is_sell', 'sell_price',
+            index=['purchase', 'cur_price', 'ratio', 'max_ratio', 'max_time','is_sell', 'sell_price',
                    'r1', 'r2', 'r3', 'r4', 'p1', 'p2', 'p3', 'p4'])
 
     def toExcel(self, writer):
@@ -174,6 +176,7 @@ while True:
                         coins[check_pur].price = coins[check_pur].purchase
                         coins[check_pur].print(buy_log)
                         coins[check_pur].print_screen()
+                        coins[check_pur].max_time = current_time.strftime("%Y/%m/%d_%H:%M:%S")
                         if coins[check_pur].has_bought_past:
                             coins[check_pur].init_update_df(current_time.strftime("%Y/%m/%d_%H:%M:%S"),
                                                             list(purchase_df.loc[check_pur, 'prev1':'prev4']))
@@ -198,10 +201,20 @@ while True:
         for name, check_price in purchased_coin.items():
             check_price.price = price_dic[name]
             check_price.ratio = check_price.price/check_price.purchase
-            check_price.max_ratio = max(check_price.max_ratio, check_price.ratio)
+            # check_price.max_ratio = max(check_price.max_ratio, check_price.ratio)
+            if check_price.max_ratio < check_price.ratio:
+                check_price.max_ratio = check_price.ratio
+                check_price.max_time = current_time.strftime("%Y/%m/%d_%H:%M:%S")
 
-            if (current_time - check_price.purchasetime) > delta_10min:
-                check_price.after_5 = True
+            '''
+            for Testing, now every purchased coin will be tracked until end of program
+            '''
+            # if (current_time - check_price.purchasetime) > delta_10min:
+            #    check_price.after_5 = True
+            '''
+            for Testing, That mean, now we don't sell coin
+            '''
+
             if check_price.after_5:
                 if (check_price.max_ratio > 1) & (check_price.ratio < ((check_price.max_ratio-1)/2 + 1)):
                     '''
