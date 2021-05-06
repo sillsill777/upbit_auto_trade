@@ -12,6 +12,13 @@ buy_log.close()
 sell_log.close()
 writer = pd.ExcelWriter("./CoinData.xlsx")
 
+delta30 = datetime.timedelta(seconds=30)
+delta_1min = datetime.timedelta(minutes=1)
+delta1 = datetime.timedelta(seconds=1)
+delta2 = datetime.timedelta(seconds=2)
+delta_5min = datetime.timedelta(minutes=5)
+delta_10min = datetime.timedelta(minutes=10)
+
 
 class Coin:
     def __init__(self, name):
@@ -28,6 +35,7 @@ class Coin:
         self.max_ratio = 1
         self.purchasetime = datetime.datetime.now()
         self.df = pd.DataFrame()
+        self.has_bought_past = False
 
     def initialize(self):
         self.bought = False
@@ -37,14 +45,23 @@ class Coin:
         self.ratio = 0
         self.max_ratio = 1
 
-    def init_df(self):
-        self.df = pd.DataFrame([[self.purchase,self.price,self.ratio,self.max_ratio,self.is_sell,self.sell]],
-            index=[self.purchasetime.strftime("%Y/%m/%d_%H:%M:%S")],
-                               columns=['purchase','cur_price','ratio','max_ratio','is_sell','sell_price'])
+    def init_df(self, lp):
+        self.df = pd.DataFrame([[self.purchase, self.price, self.ratio, self.max_ratio, self.is_sell, self.sell,
+                                 lp[1]/lp[0], lp[2]/lp[1], lp[3]/lp[2], lp[4]/lp[3], lp[0], lp[1], lp[2], lp[3]]],
+                               index=[self.purchasetime.strftime("%Y/%m/%d_%H:%M:%S")],
+                               columns=['purchase', 'cur_price', 'ratio', 'max_ratio', 'is_sell', 'sell_price',
+                                        'r1', 'r2', 'r3', 'r4', 'p1', 'p2', 'p3', 'p4'])
 
     def update_df(self, cur_time):
-        self.df.loc[cur_time] = pd.Series([self.purchase,self.price,self.ratio,self.max_ratio,self.is_sell,self.sell],
-                            index=['purchase', 'cur_price', 'ratio', 'max_ratio', 'is_sell', 'sell_price'] )
+        self.df.loc[cur_time] = pd.Series([self.purchase, self.price, self.ratio, self.max_ratio, self.is_sell, self.sell],
+                                        index=['purchase', 'cur_price', 'ratio', 'max_ratio', 'is_sell', 'sell_price'])
+
+    def init_update_df(self, cur_time, lp):
+        self.df.loc[cur_time] = pd.Series(
+            [self.purchase, self.price, self.ratio, self.max_ratio, self.is_sell, self.sell,
+             lp[1]/lp[0], lp[2]/lp[1], lp[3]/lp[2], lp[4]/lp[3], lp[0], lp[1], lp[2], lp[3]],
+            index=['purchase', 'cur_price', 'ratio', 'max_ratio', 'is_sell', 'sell_price',
+                   'r1', 'r2', 'r3', 'r4', 'p1', 'p2', 'p3', 'p4'])
 
     def toExcel(self, writer):
         self.df.to_excel(writer, sheet_name=self.name)
@@ -83,15 +100,10 @@ for item in coin_list:
 """
 
 current_time = datetime.datetime.now()
-delta30 = datetime.timedelta(seconds=30)
-delta_1min = datetime.timedelta(minutes=1)
-delta1 = datetime.timedelta(seconds=1)
-delta2 = datetime.timedelta(seconds=2)
-delta_5min = datetime.timedelta(minutes=5)
-target_purchased_coin_time = current_time + delta_5min
-
 total_coin_num = len(coin_list)
 get_price_iter = int(total_coin_num/100)
+
+
 def get_cur_price():
     if total_coin_num <= 100:
         price_dicc = pyupbit.get_current_price(coin_list[:total_coin_num])
@@ -113,12 +125,19 @@ coin_df['prev3'] = pd.DataFrame(price_dic.values(), index=price_dic.keys())
 time.sleep(60)
 price_dic = get_cur_price()
 coin_df['prev4'] = pd.DataFrame(price_dic.values(), index=price_dic.keys())
+coin_df['is_main_coin'] = coin_df['prev4'] >= 1000
+threshHold_main = 1.01
+threshHold2_main = 1.002
+threshHold_alter = 1.015
+threshHold2_alter = 1.005
+coin_df['threshHold'] = np.where(coin_df['is_main_coin'], threshHold_main, threshHold_alter)
+coin_df['threshHold2'] = np.where(coin_df['is_main_coin'], threshHold2_main, threshHold2_alter)
 print(coin_df)
-threshHold = 1.01
-threshHold2 = 1.002
 
 current_time = datetime.datetime.now()
 target_time = current_time + delta_1min
+target_purchased_coin_time = current_time + delta_5min
+
 while True:
     try:
         current_time = datetime.datetime.now()
@@ -127,10 +146,10 @@ while True:
             current_time = datetime.datetime.now()
             target_time = current_time + delta_1min
             coin_df['cur'] = pd.DataFrame(price_dic.values(), index=price_dic.keys())
-            coin_df['ratio1'] = (coin_df['prev2']/coin_df['prev1']) > threshHold
-            coin_df['ratio2'] = (coin_df['prev3']/coin_df['prev2']) > threshHold2
-            coin_df['ratio3'] = (coin_df['prev4']/coin_df['prev3']) > threshHold2
-            coin_df['ratio4'] = (coin_df['cur'] / coin_df['prev4']) > threshHold2
+            coin_df['ratio1'] = (coin_df['prev2']/coin_df['prev1']) > coin_df['threshHold']
+            coin_df['ratio2'] = (coin_df['prev3']/coin_df['prev2']) > coin_df['threshHold2']
+            coin_df['ratio3'] = (coin_df['prev4']/coin_df['prev3']) > coin_df['threshHold2']
+            coin_df['ratio4'] = (coin_df['cur'] / coin_df['prev4']) > coin_df['threshHold2']
 
             coin_df['target'] = coin_df['ratio1'] & ((coin_df['ratio2']*1 + coin_df['ratio3']*1 +
                                                       coin_df['ratio4']*1) >= 2)
@@ -155,7 +174,11 @@ while True:
                         coins[check_pur].price = coins[check_pur].purchase
                         coins[check_pur].print(buy_log)
                         coins[check_pur].print_screen()
-                        coins[check_pur].init_df()
+                        if coins[check_pur].has_bought_past:
+                            coins[check_pur].init_update_df(current_time.strftime("%Y/%m/%d_%H:%M:%S"),
+                                                            list(purchase_df.loc[check_pur, 'prev1':'prev4']))
+                        else:
+                            coins[check_pur].init_df(list(purchase_df.loc[check_pur, 'prev1':'prev4']))
                         coins[check_pur].toExcel(writer)
                         purchased_coin[check_pur] = coins[check_pur]
                     buy_log.close()
@@ -164,6 +187,7 @@ while True:
         if len(list_of_purchased_coin) != 0:
             price_dic = pyupbit.get_current_price(list_of_purchased_coin)
         list_to_del = []
+
         if (current_time >= (target_purchased_coin_time - delta1)) & (
                 current_time <= (target_purchased_coin_time + delta1)):
             target_purchased_coin_time = current_time + delta_5min
@@ -176,7 +200,7 @@ while True:
             check_price.ratio = check_price.price/check_price.purchase
             check_price.max_ratio = max(check_price.max_ratio, check_price.ratio)
 
-            if (current_time - check_price.purchasetime) > delta_5min:
+            if (current_time - check_price.purchasetime) > delta_10min:
                 check_price.after_5 = True
             if check_price.after_5:
                 if (check_price.max_ratio > 1) & (check_price.ratio < ((check_price.max_ratio-1)/2 + 1)):
@@ -186,6 +210,7 @@ while True:
                     sell_log = open("sell_log.txt", "a")
                     check_price.is_sell = True
                     check_price.sell = pyupbit.get_current_price(name)
+                    check_price.has_bought_past = True
                     check_price.print(sell_log)
                     check_price.update_df(current_time.strftime("%Y/%m/%d_%H:%M:%S"))
                     check_price.toExcel(writer)
