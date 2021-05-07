@@ -191,8 +191,8 @@ while True:
             price_dic = pyupbit.get_current_price(list_of_purchased_coin)
         list_to_del = []
 
-        if (current_time >= (target_purchased_coin_time - delta1)) & (
-                current_time <= (target_purchased_coin_time + delta1)):
+        if (current_time >= (target_purchased_coin_time - delta2)) & (
+                current_time <= (target_purchased_coin_time + delta2)):
             target_purchased_coin_time = current_time + delta_5min
             curr_time = current_time.strftime("%Y/%m/%d_%H:%M:%S")
             for name, check_price in purchased_coin.items():
