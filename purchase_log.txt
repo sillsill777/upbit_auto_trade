@@ -1,40 +1,210 @@
 --------------------------------------------------
-   name: SBD        purchase_time: 2021-05-06 13:24:58.024292
-     purchase_price: 9180.0      current_price: 9180.0       ratio: 1.0     max_ratio:1 
+   name: KMD        purchase_time: 2021-05-06 17:09:27.840487
+     purchase_price: 4070.0      current_price: 4070.0       ratio: 1.0     max_ratio:1 
 
 
 --------------------------------------------------
-   name: STEEM        purchase_time: 2021-05-06 13:26:57.482045
-     purchase_price: 1265.0      current_price: 1265.0       ratio: 1.0     max_ratio:1 
+   name: BTG        purchase_time: 2021-05-06 17:22:25.050845
+     purchase_price: 196500.0      current_price: 196500.0       ratio: 1.0     max_ratio:1 
 
 
 --------------------------------------------------
-   name: SBD        purchase_time: 2021-05-06 13:52:50.704080
-     purchase_price: 9585.0      current_price: 9585.0       ratio: 1.0     max_ratio:1 
+   name: BCHA        purchase_time: 2021-05-06 17:23:25.046812
+     purchase_price: 77110.0      current_price: 77110.0       ratio: 1.0     max_ratio:1 
 
 
 --------------------------------------------------
-   name: KMD        purchase_time: 2021-05-06 14:03:49.126938
-     purchase_price: 3960.0      current_price: 3960.0       ratio: 1.0     max_ratio:1 
+   name: KAVA        purchase_time: 2021-05-06 17:49:23.207869
+     purchase_price: 8345.0      current_price: 8345.0       ratio: 1.0     max_ratio:1 
 
 
 --------------------------------------------------
-   name: KMD        purchase_time: 2021-05-06 14:30:40.629650
-     purchase_price: 3950.0      current_price: 3950.0       ratio: 1.0     max_ratio:1 
+   name: WAVES        purchase_time: 2021-05-06 17:50:23.288841
+     purchase_price: 42900.0      current_price: 42900.0       ratio: 1.0     max_ratio:1 
 
 
 --------------------------------------------------
-   name: KMD        purchase_time: 2021-05-06 15:01:30.466991
-     purchase_price: 4335.0      current_price: 4335.0       ratio: 1.0     max_ratio:1 
+   name: ETC        purchase_time: 2021-05-06 18:25:25.832717
+     purchase_price: 117800.0      current_price: 117800.0       ratio: 1.0     max_ratio:1 
 
 
 --------------------------------------------------
-   name: STEEM        purchase_time: 2021-05-06 15:18:29.747018
-     purchase_price: 1240.0      current_price: 1240.0       ratio: 1.0     max_ratio:1 
+   name: ZRX        purchase_time: 2021-05-06 18:49:27.614148
+     purchase_price: 2415.0      current_price: 2415.0       ratio: 1.0     max_ratio:1 
 
 
 --------------------------------------------------
-   name: BCHA        purchase_time: 2021-05-06 15:31:28.567587
-     purchase_price: 74750.0      current_price: 74750.0       ratio: 1.0     max_ratio:1 
+   name: BCH        purchase_time: 2021-05-06 19:11:31.995442
+     purchase_price: 1700000.0      current_price: 1700000.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: ZIL        purchase_time: 2021-05-06 19:47:41.504201
+     purchase_price: 286.0      current_price: 286.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: ADA        purchase_time: 2021-05-06 20:23:45.216067
+     purchase_price: 2035.0      current_price: 2035.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: EOS        purchase_time: 2021-05-06 20:36:48.462388
+     purchase_price: 11680.0      current_price: 11680.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: QTUM        purchase_time: 2021-05-06 20:44:50.308398
+     purchase_price: 23270.0      current_price: 23270.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: XTZ        purchase_time: 2021-05-06 21:42:07.280557
+     purchase_price: 8585.0      current_price: 8585.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: NEO        purchase_time: 2021-05-06 21:48:06.927347
+     purchase_price: 145800.0      current_price: 145800.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: STEEM        purchase_time: 2021-05-06 22:07:08.731688
+     purchase_price: 1280.0      current_price: 1280.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: REP        purchase_time: 2021-05-06 22:19:10.617972
+     purchase_price: 62140.0      current_price: 62140.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: OMG        purchase_time: 2021-05-06 22:21:11.739691
+     purchase_price: 12940.0      current_price: 12940.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: BTT        purchase_time: 2021-05-06 22:39:13.992534
+     purchase_price: 10.0      current_price: 10.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: PUNDIX        purchase_time: 2021-05-06 22:41:14.000095
+     purchase_price: 3810.0      current_price: 3810.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: LOOM        purchase_time: 2021-05-07 00:03:29.418957
+     purchase_price: 195.0      current_price: 195.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: GAS        purchase_time: 2021-05-07 00:27:34.682767
+     purchase_price: 19700.0      current_price: 19700.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: BSV        purchase_time: 2021-05-07 01:03:43.747227
+     purchase_price: 534900.0      current_price: 534900.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: ADX        purchase_time: 2021-05-07 01:21:45.779124
+     purchase_price: 1565.0      current_price: 1565.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: LTC        purchase_time: 2021-05-07 01:23:46.949408
+     purchase_price: 423650.0      current_price: 423650.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: DOT        purchase_time: 2021-05-07 02:19:00.601205
+     purchase_price: 52000.0      current_price: 52000.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: ICX        purchase_time: 2021-05-07 03:39:16.394535
+     purchase_price: 2925.0      current_price: 2925.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: ONT        purchase_time: 2021-05-07 03:49:19.509585
+     purchase_price: 2870.0      current_price: 2870.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: SXP        purchase_time: 2021-05-07 03:49:19.509585
+     purchase_price: 5980.0      current_price: 5980.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: SBD        purchase_time: 2021-05-07 04:21:25.958533
+     purchase_price: 9470.0      current_price: 9470.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: IOTA        purchase_time: 2021-05-07 05:05:33.930164
+     purchase_price: 2850.0      current_price: 2850.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: ONG        purchase_time: 2021-05-07 08:04:10.032783
+     purchase_price: 1340.0      current_price: 1340.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: GRS        purchase_time: 2021-05-07 08:14:12.357682
+     purchase_price: 1785.0      current_price: 1785.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: CBK        purchase_time: 2021-05-07 09:04:29.538458
+     purchase_price: 9355.0      current_price: 9355.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: LSK        purchase_time: 2021-05-07 09:05:30.222077
+     purchase_price: 8925.0      current_price: 8925.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: VET        purchase_time: 2021-05-07 09:11:31.186701
+     purchase_price: 277.0      current_price: 277.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: MANA        purchase_time: 2021-05-07 09:12:31.307972
+     purchase_price: 1880.0      current_price: 1880.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: TRX        purchase_time: 2021-05-07 09:13:31.609136
+     purchase_price: 190.0      current_price: 190.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: LINK        purchase_time: 2021-05-07 09:21:33.827052
+     purchase_price: 59830.0      current_price: 59830.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: JST        purchase_time: 2021-05-07 09:25:35.014346
+     purchase_price: 186.0      current_price: 186.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: BAT        purchase_time: 2021-05-07 09:40:35.863083
+     purchase_price: 1815.0      current_price: 1815.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: ARK        purchase_time: 2021-05-07 09:58:38.376636
+     purchase_price: 2740.0      current_price: 2740.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: STX        purchase_time: 2021-05-07 10:05:39.158934
+     purchase_price: 2335.0      current_price: 2335.0       ratio: 1.0     max_ratio:1 
 
 
