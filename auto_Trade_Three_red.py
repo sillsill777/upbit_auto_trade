@@ -10,6 +10,8 @@ sell_log = open("sell_log.txt", "w")
 buy_log.close()
 sell_log.close()
 writer = pd.ExcelWriter("./CoinData.xlsx")
+writer2 = pd.ExcelWriter("./CoinData2.xlsx")
+writer3 = pd.ExcelWriter("./CoinData3.xlsx")
 
 delta30 = datetime.timedelta(seconds=30)
 delta_1min = datetime.timedelta(minutes=1)
@@ -36,6 +38,7 @@ class Coin:
         self.purchasetime = datetime.datetime.now()
         self.df = pd.DataFrame()
         self.has_bought_past = False
+        self.writer_num = writer
 
     def initialize(self):
         self.bought = False
@@ -65,9 +68,9 @@ class Coin:
             index=['purchase', 'cur_price', 'ratio', 'max_ratio', 'max_time','is_sell', 'sell_price',
                    'r1', 'r2', 'r3', 'p1', 'p2', 'p3'])
 
-    def toExcel(self, writer):
-        self.df.to_excel(writer, sheet_name=self.name)
-        writer.save()
+    def toExcel(self):
+        self.df.to_excel(self.writer_num, sheet_name=self.name)
+        self.writer_num.save()
 
     def print(self, f):
         f.write("-"*50)
@@ -95,8 +98,15 @@ class Coin:
 coin_list = pyupbit.get_tickers(fiat="KRW")
 coins = {}
 purchased_coin = {}
+i = 0
 for item in coin_list:
     coins[item] = Coin(item)
+    if (i % 3) == 0:
+        coins[item].writer_num = writer
+    elif (i % 3) == 1:
+        coins[item].writer_num = writer2
+    else:
+        coins[item].writer_num = writer3
 """
  coins["KRW-BTC"]와 같이 코인 접근 가능, coins["KRW-BTC"].name
 """
@@ -177,7 +187,7 @@ while True:
                                                             list(purchase_df.loc[check_pur, 'prev1':'prev4']))
                         else:
                             coins[check_pur].init_df(list(purchase_df.loc[check_pur, 'prev1':'prev3']))
-                        coins[check_pur].toExcel(writer)
+                        coins[check_pur].toExcel()
                         purchased_coin[check_pur] = coins[check_pur]
                     buy_log.close()
 
@@ -192,7 +202,7 @@ while True:
             curr_time = current_time.strftime("%Y/%m/%d_%H:%M:%S")
             for name, check_price in purchased_coin.items():
                 check_price.update_df(curr_time)
-                check_price.toExcel(writer)
+                check_price.toExcel()
         for name, check_price in purchased_coin.items():
             check_price.price = price_dic[name]
             check_price.ratio = check_price.price/check_price.purchase
@@ -221,7 +231,7 @@ while True:
                     check_price.has_bought_past = True
                     check_price.print(sell_log)
                     check_price.update_df(current_time.strftime("%Y/%m/%d_%H:%M:%S"))
-                    check_price.toExcel(writer)
+                    check_price.toExcel()
                     print("="*60)
                     print("Sell")
                     print("="*60)
