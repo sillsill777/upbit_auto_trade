@@ -20,6 +20,8 @@ delta_5min = datetime.timedelta(minutes=5)
 delta_10min = datetime.timedelta(minutes=10)
 delta_45min = datetime.timedelta(minutes=45)
 sell_ratio = 1.11
+trade_fee = 0.05
+earn = []
 
 
 class Coin:
@@ -204,6 +206,7 @@ while True:
                 sell_log = open("sell_log.txt", "a")
                 check_price.is_sell = True
                 check_price.sell = pyupbit.get_current_price(name)
+                earn.append(check_price.ratio-trade_fee)
                 check_price.has_bought_past = True
                 check_price.print(sell_log)
                 check_price.update_df(current_time.strftime("%Y/%m/%d_%H:%M:%S"))
@@ -221,13 +224,14 @@ while True:
                 check_price.after_45 = True
 
             if check_price.after_45 & (check_price.ratio < sell_ratio):
-                if check_price.ratio < 1:
+                if check_price.ratio < 0.99:
                     '''
                     coin sell
                     '''
                     sell_log = open("sell_log.txt", "a")
                     check_price.is_sell = True
                     check_price.sell = pyupbit.get_current_price(name)
+                    earn.append(check_price.ratio-trade_fee)
                     check_price.has_bought_past = True
                     check_price.print(sell_log)
                     check_price.update_df(current_time.strftime("%Y/%m/%d_%H:%M:%S"))
@@ -241,6 +245,12 @@ while True:
         time.sleep(0.5)
     except Exception as e:
         print(e)
+        for left_coin in purchased_coin:
+            earn.append(left_coin.ratio-trade_fee)
+        total_earn = pd.Series(earn).mean()
+        with open("final.txt", "w") as f:
+            f.write("total earn: {}".format(total_earn))
+
         time.sleep(0.5)
 
 
