@@ -20,7 +20,7 @@ delta_5min = datetime.timedelta(minutes=5)
 delta_10min = datetime.timedelta(minutes=10)
 delta_45min = datetime.timedelta(minutes=45)
 sell_ratio = 1.11
-trade_fee = 0.05
+trade_fee = 0.0005
 earn = []
 
 
@@ -202,7 +202,18 @@ while True:
         for name, check_price in purchased_coin.items():
             check_price.price = price_dic[name]
             check_price.ratio = check_price.price/check_price.purchase
-            if check_price.ratio >= sell_ratio:
+            # check_price.max_ratio = max(check_price.max_ratio, check_price.ratio)
+            if check_price.max_ratio < check_price.ratio:
+                check_price.max_ratio = check_price.ratio
+                check_price.max_time = current_time.strftime("%Y/%m/%d_%H:%M:%S")
+
+            if (current_time - check_price.purchasetime) > delta_45min:
+                check_price.after_45 = True
+
+            if (check_price.after_45 & (check_price.ratio < 0.99)) | (check_price.ratio >= sell_ratio):
+                '''
+                coin sell
+                '''
                 sell_log = open("sell_log.txt", "a")
                 check_price.is_sell = True
                 check_price.sell = pyupbit.get_current_price(name)
@@ -215,31 +226,6 @@ while True:
                 check_price.initialize()
                 list_to_del.append(name)
                 sell_log.close()
-            # check_price.max_ratio = max(check_price.max_ratio, check_price.ratio)
-            if check_price.max_ratio < check_price.ratio:
-                check_price.max_ratio = check_price.ratio
-                check_price.max_time = current_time.strftime("%Y/%m/%d_%H:%M:%S")
-
-            if (current_time - check_price.purchasetime) > delta_45min:
-                check_price.after_45 = True
-
-            if check_price.after_45 & (check_price.ratio < sell_ratio):
-                if check_price.ratio < 0.99:
-                    '''
-                    coin sell
-                    '''
-                    sell_log = open("sell_log.txt", "a")
-                    check_price.is_sell = True
-                    check_price.sell = pyupbit.get_current_price(name)
-                    earn.append(check_price.ratio-trade_fee)
-                    check_price.has_bought_past = True
-                    check_price.print(sell_log)
-                    check_price.update_df(current_time.strftime("%Y/%m/%d_%H:%M:%S"))
-                    check_price.toExcel()
-                    check_price.print_screen()
-                    check_price.initialize()
-                    list_to_del.append(name)
-                    sell_log.close()
         for name in list_to_del:
             purchased_coin.pop(name)
         time.sleep(0.5)
