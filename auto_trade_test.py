@@ -19,7 +19,7 @@ delta2 = datetime.timedelta(seconds=2)
 delta_5min = datetime.timedelta(minutes=5)
 delta_10min = datetime.timedelta(minutes=10)
 delta_45min = datetime.timedelta(minutes=45)
-sell_ratio = 1.11
+sell_ratio = 1.10
 trade_fee = 0.0005
 earn = []
 
@@ -228,15 +228,16 @@ while True:
                 sell_log.close()
         for name in list_to_del:
             purchased_coin.pop(name)
-        time.sleep(0.5)
-    except Exception as e:
-        print(e)
+        tmp_earn = earn.copy()
         for left_coin in purchased_coin:
-            earn.append(left_coin.ratio-trade_fee)
-        total_earn = pd.Series(earn).mean()
+            tmp_earn.append(left_coin.ratio-trade_fee)
+        total_earn = pd.Series(tmp_earn).mean()
         with open("final.txt", "w") as f:
             f.write("total earn: {}".format(total_earn))
 
+        time.sleep(0.5)
+    except Exception as e:
+        print(e)
         time.sleep(0.5)
 
 
