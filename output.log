@@ -1,0 +1,492 @@
+                 prev1       prev2  ...  threshHold  threshHold2
+0                                   ...                         
+KRW-BTC     72780000.0  72788000.0  ...        1.01        1.002
+KRW-ETH      4837000.0   4826000.0  ...        1.01        1.002
+KRW-NEO       142800.0    142400.0  ...        1.01        1.002
+KRW-MTL         4930.0      4955.0  ...        1.01        1.002
+KRW-LTC       421200.0    420700.0  ...        1.01        1.002
+...                ...         ...  ...         ...          ...
+KRW-PUNDIX      3690.0      3715.0  ...        1.01        1.002
+KRW-FLOW       34510.0     34640.0  ...        1.01        1.002
+KRW-DAWN        7870.0      7895.0  ...        1.01        1.002
+KRW-AXS         9780.0      9725.0  ...        1.01        1.002
+KRW-STX         2350.0      2355.0  ...        1.01        1.002
+
+[117 rows x 6 columns]
+----------------------------------------
+          prev1   prev2   prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                              ...                                
+KRW-ARK  2985.0  3020.0  3040.0          True  ...    True    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: ARK        purchase_time: 2021-05-09 13:36:41.335823
+
+     purchase_price: 3060.0      current_price: 3060.0       ratio: 1.0
+
+
+
+
+------------------------------------------------------------
+
+   name: ARK        purchase_time: 2021-05-09 13:36:41.335823
+
+     purchase_price: 3060.0      sell_price: 2955.0      ratio: 0.9656862745098039
+
+
+
+
+----------------------------------------
+          prev1   prev2   prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                              ...                                
+KRW-SXP  5955.0  6050.0  6065.0          True  ...    True    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: SXP        purchase_time: 2021-05-09 15:46:11.820556
+
+     purchase_price: 6090.0      current_price: 6090.0       ratio: 1.0
+
+
+
+
+------------------------------------------------------------
+
+   name: SXP        purchase_time: 2021-05-09 15:46:11.820556
+
+     purchase_price: 6090.0      sell_price: 5980.0      ratio: 0.9819376026272578
+
+
+
+
+----------------------------------------
+          prev1   prev2   prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                              ...                                
+KRW-GRS  2215.0  2255.0  2310.0          True  ...    True    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: GRS        purchase_time: 2021-05-09 16:47:00.376263
+
+     purchase_price: 2320.0      current_price: 2320.0       ratio: 1.0
+
+
+
+
+----------------------------------------
+          prev1   prev2   prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                              ...                                
+KRW-GRS  2325.0  2350.0  2370.0          True  ...    True    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: GRS        purchase_time: 2021-05-09 16:47:00.376263
+
+     purchase_price: 2320.0      sell_price: 2290.0      ratio: 0.9870689655172413
+
+
+
+
+----------------------------------------
+            prev1   prev2   prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                                ...                                
+KRW-STRAX  4930.0  4980.0  4995.0          True  ...    True    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: STRAX        purchase_time: 2021-05-09 19:17:25.285510
+
+     purchase_price: 5005.0      current_price: 5005.0       ratio: 1.0
+
+
+
+
+----------------------------------------
+          prev1   prev2   prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                              ...                                
+KRW-GRS  2245.0  2270.0  2275.0          True  ...    True    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: GRS        purchase_time: 2021-05-09 19:54:28.034436
+
+     purchase_price: 2310.0      current_price: 2310.0       ratio: 1.0
+
+
+
+
+------------------------------------------------------------
+
+   name: GRS        purchase_time: 2021-05-09 19:54:28.034436
+
+     purchase_price: 2310.0      sell_price: 2285.0      ratio: 0.9891774891774892
+
+
+
+
+----------------------------------------
+            prev1     prev2     prev3  ...  ratio2  ratio3  target
+0                                      ...                        
+KRW-ETC  148900.0  150950.0  151500.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: ETC        purchase_time: 2021-05-09 20:53:27.349995
+
+     purchase_price: 152500.0      current_price: 152500.0       ratio: 1.0
+
+
+
+
+------------------------------------------------------------
+
+   name: STRAX        purchase_time: 2021-05-09 19:17:25.285510
+
+     purchase_price: 5005.0      sell_price: 4940.0      ratio: 0.987012987012987
+
+
+
+
+------------------------------------------------------------
+
+   name: ETC        purchase_time: 2021-05-09 20:53:27.349995
+
+     purchase_price: 152500.0      sell_price: 147150.0      ratio: 0.9639344262295082
+
+
+
+
+----------------------------------------
+            prev1     prev2     prev3  ...  ratio2  ratio3  target
+0                                      ...                        
+KRW-BSV  419250.0  424050.0  425650.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: BSV        purchase_time: 2021-05-10 01:39:01.259140
+
+     purchase_price: 428000.0      current_price: 428000.0       ratio: 1.0
+
+
+
+
+------------------------------------------------------------
+
+   name: BSV        purchase_time: 2021-05-10 01:39:01.259140
+
+     purchase_price: 428000.0      sell_price: 423550.0      ratio: 0.9896028037383178
+
+
+
+
+----------------------------------------
+            prev1     prev2     prev3  ...  ratio2  ratio3  target
+0                                      ...                        
+KRW-LTC  486400.0  495400.0  501900.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: LTC        purchase_time: 2021-05-10 09:06:12.903188
+
+     purchase_price: 503100.0      current_price: 503100.0       ratio: 1.0
+
+
+
+
+----------------------------------------
+           prev1    prev2    prev3  ...  ratio2  ratio3  target
+0                                   ...                        
+KRW-LSK  10480.0  10670.0  10800.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: LSK        purchase_time: 2021-05-10 09:09:13.967122
+
+     purchase_price: 11030.0      current_price: 11030.0       ratio: 1.0
+
+
+
+
+----------------------------------------
+            prev1    prev2    prev3  ...  ratio2  ratio3  target
+0                                    ...                        
+KRW-BCHA  61970.0  62840.0  63350.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: BCHA        purchase_time: 2021-05-10 09:12:14.765635
+
+     purchase_price: 64710.0      current_price: 64710.0       ratio: 1.0
+
+
+
+
+----------------------------------------
+          prev1   prev2   prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                              ...                                
+KRW-MTL  4885.0  4970.0  4990.0          True  ...    True    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: MTL        purchase_time: 2021-05-10 09:15:14.907088
+
+     purchase_price: 5005.0      current_price: 5005.0       ratio: 1.0
+
+
+
+
+----------------------------------------
+            prev1    prev2    prev3  ...  ratio2  ratio3  target
+0                                    ...                        
+KRW-BCHA  65220.0  67500.0  68390.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+----------------------------------------
+           prev1    prev2    prev3  ...  ratio2  ratio3  target
+0                                   ...                        
+KRW-LSK  10670.0  10830.0  11020.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+----------------------------------------
+           prev1    prev2    prev3  ...  ratio2  ratio3  target
+0                                   ...                        
+KRW-LSK  10830.0  11020.0  11210.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+----------------------------------------
+           prev1    prev2    prev3  ...  ratio2  ratio3  target
+0                                   ...                        
+KRW-LSK  11020.0  11210.0  11320.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+----------------------------------------
+            prev1   prev2   prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                                ...                                
+KRW-BAT    1720.0  1740.0  1760.0          True  ...    True    True    True    True
+KRW-STRAX  5025.0  5165.0  5190.0          True  ...    True    True    True    True
+
+[2 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: BAT        purchase_time: 2021-05-10 09:28:17.112930
+
+     purchase_price: 1770.0      current_price: 1770.0       ratio: 1.0
+
+
+
+
+------------------------------------------------------------
+
+   name: STRAX        purchase_time: 2021-05-10 09:28:17.112930
+
+     purchase_price: 5240.0      current_price: 5240.0       ratio: 1.0
+
+
+
+
+------------------------------------------------------------
+
+   name: LSK        purchase_time: 2021-05-10 09:09:13.967122
+
+     purchase_price: 11030.0      sell_price: 12230.0      ratio: 1.1115140525838623
+
+
+
+
+----------------------------------------
+          prev1   prev2   prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                              ...                                
+KRW-BAT  1740.0  1760.0  1770.0          True  ...    True    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+----------------------------------------
+            prev1    prev2    prev3  ...  ratio2  ratio3  target
+0                                    ...                        
+KRW-BCHA  64300.0  65340.0  65840.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: LTC        purchase_time: 2021-05-10 09:06:12.903188
+
+     purchase_price: 503100.0      sell_price: 481650.0      ratio: 0.9573643410852714
+
+
+
+
+------------------------------------------------------------
+
+   name: BCHA        purchase_time: 2021-05-10 09:12:14.765635
+
+     purchase_price: 64710.0      sell_price: 64000.0      ratio: 0.9890279709473033
+
+
+
+
+----------------------------------------
+           prev1    prev2    prev3  ...  ratio2  ratio3  target
+0                                   ...                        
+KRW-LSK  11950.0  12140.0  12400.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: LSK        purchase_time: 2021-05-10 10:00:17.370563
+
+     purchase_price: 12570.0      current_price: 12570.0       ratio: 1.0
+
+
+
+
+----------------------------------------
+           prev1    prev2    prev3  ...  ratio2  ratio3  target
+0                                   ...                        
+KRW-LSK  12140.0  12400.0  12570.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: STRAX        purchase_time: 2021-05-10 09:28:17.112930
+
+     purchase_price: 5240.0      sell_price: 5070.0      ratio: 0.9666030534351145
+
+
+
+
+------------------------------------------------------------
+
+   name: LSK        purchase_time: 2021-05-10 10:00:17.370563
+
+     purchase_price: 12570.0      sell_price: 12010.0      ratio: 0.9554494828957836
+
+
+
+
+----------------------------------------
+          prev1   prev2   prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                              ...                                
+KRW-GRS  2060.0  2090.0  2135.0          True  ...    True    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: GRS        purchase_time: 2021-05-10 16:06:10.199922
+
+     purchase_price: 2160.0      current_price: 2160.0       ratio: 1.0
+
+
+
+
+----------------------------------------
+          prev1   prev2   prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                              ...                                
+KRW-GRS  2090.0  2135.0  2160.0          True  ...    True    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: GRS        purchase_time: 2021-05-10 16:06:10.199922
+
+     purchase_price: 2160.0      sell_price: 2050.0      ratio: 0.9490740740740741
+
+
+
+
+----------------------------------------
+           prev1  prev2  prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                             ...                                
+KRW-AERGO  343.0  350.0  352.0         False  ...    True    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: AERGO        purchase_time: 2021-05-10 18:26:07.712177
+
+     purchase_price: 355.0      current_price: 355.0       ratio: 1.0
+
+
+
+
+------------------------------------------------------------
+
+   name: AERGO        purchase_time: 2021-05-10 18:26:07.712177
+
+     purchase_price: 355.0      sell_price: 345.0      ratio: 0.971830985915493
+
+
+
+
+----------------------------------------
+             prev1    prev2    prev3  ...  ratio2  ratio3  target
+0                                     ...                        
+KRW-WAVES  42500.0  43000.0  43160.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------
+
+   name: WAVES        purchase_time: 2021-05-10 20:01:06.372222
+
+     purchase_price: 43430.0      current_price: 43430.0       ratio: 1.0
+
+
+
+
+----------------------------------------
+             prev1    prev2    prev3  ...  ratio2  ratio3  target
+0                                     ...                        
+KRW-WAVES  44120.0  44630.0  44850.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+----------------------------------------
+             prev1    prev2    prev3  ...  ratio2  ratio3  target
+0                                     ...                        
+KRW-WAVES  45400.0  46020.0  46200.0  ...    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+----------------------------------------
+          prev1  prev2  prev3  is_main_coin  ...  ratio1  ratio2  ratio3  target
+0                                            ...                                
+KRW-TSHP   24.2   24.6   24.8         False  ...    True    True    True    True
+
+[1 rows x 11 columns]
+----------------------------------------
+------------------------------------------------------------

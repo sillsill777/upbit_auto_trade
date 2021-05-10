@@ -1,20 +1,90 @@
 --------------------------------------------------
-   name: GRS        purchase_time: 2021-05-09 10:53:57.446382
-     purchase_price: 2075.0      current_price: 2075.0       ratio: 1.0     max_ratio:1 
+   name: ARK        purchase_time: 2021-05-09 13:36:41.335823
+     purchase_price: 3060.0      current_price: 3060.0       ratio: 1.0     max_ratio:1 
 
 
 --------------------------------------------------
-   name: EOS        purchase_time: 2021-05-09 10:57:56.876045
-     purchase_price: 13200.0      current_price: 13200.0       ratio: 1.0     max_ratio:1 
+   name: SXP        purchase_time: 2021-05-09 15:46:11.820556
+     purchase_price: 6090.0      current_price: 6090.0       ratio: 1.0     max_ratio:1 
 
 
 --------------------------------------------------
-   name: KMD        purchase_time: 2021-05-09 11:01:56.384285
-     purchase_price: 4525.0      current_price: 4525.0       ratio: 1.0     max_ratio:1 
+   name: GRS        purchase_time: 2021-05-09 16:47:00.376263
+     purchase_price: 2320.0      current_price: 2320.0       ratio: 1.0     max_ratio:1 
 
 
 --------------------------------------------------
-   name: DOGE        purchase_time: 2021-05-09 12:32:47.435232
-     purchase_price: 844.0      current_price: 844.0       ratio: 1.0     max_ratio:1 
+   name: STRAX        purchase_time: 2021-05-09 19:17:25.285510
+     purchase_price: 5005.0      current_price: 5005.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: GRS        purchase_time: 2021-05-09 19:54:28.034436
+     purchase_price: 2310.0      current_price: 2310.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: ETC        purchase_time: 2021-05-09 20:53:27.349995
+     purchase_price: 152500.0      current_price: 152500.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: BSV        purchase_time: 2021-05-10 01:39:01.259140
+     purchase_price: 428000.0      current_price: 428000.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: LTC        purchase_time: 2021-05-10 09:06:12.903188
+     purchase_price: 503100.0      current_price: 503100.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: LSK        purchase_time: 2021-05-10 09:09:13.967122
+     purchase_price: 11030.0      current_price: 11030.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: BCHA        purchase_time: 2021-05-10 09:12:14.765635
+     purchase_price: 64710.0      current_price: 64710.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: MTL        purchase_time: 2021-05-10 09:15:14.907088
+     purchase_price: 5005.0      current_price: 5005.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: BAT        purchase_time: 2021-05-10 09:28:17.112930
+     purchase_price: 1770.0      current_price: 1770.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: STRAX        purchase_time: 2021-05-10 09:28:17.112930
+     purchase_price: 5240.0      current_price: 5240.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: LSK        purchase_time: 2021-05-10 10:00:17.370563
+     purchase_price: 12570.0      current_price: 12570.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: GRS        purchase_time: 2021-05-10 16:06:10.199922
+     purchase_price: 2160.0      current_price: 2160.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: AERGO        purchase_time: 2021-05-10 18:26:07.712177
+     purchase_price: 355.0      current_price: 355.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: WAVES        purchase_time: 2021-05-10 20:01:06.372222
+     purchase_price: 43430.0      current_price: 43430.0       ratio: 1.0     max_ratio:1 
+
+
+--------------------------------------------------
+   name: TSHP        purchase_time: 2021-05-10 21:18:08.240907
+     purchase_price: 25.0      current_price: 25.0       ratio: 1.0     max_ratio:1 
 
 
