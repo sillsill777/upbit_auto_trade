@@ -1,75 +1,105 @@
 --------------------------------------------------
-   name: ARK        purchase_time: 2021-05-09 13:36:41.335823
-     purchase_price: 3060.0      sell_price: 2955.0      ratio: 0.9656862745098039
+   name: AXS        purchase_time: 2021-05-10 22:53:31.349064
+     purchase_price: 9995.0      sell_price: 9590.0      ratio: 0.959479739869935
 
 
 --------------------------------------------------
-   name: SXP        purchase_time: 2021-05-09 15:46:11.820556
-     purchase_price: 6090.0      sell_price: 5980.0      ratio: 0.9819376026272578
+   name: BSV        purchase_time: 2021-05-11 03:38:18.647802
+     purchase_price: 484650.0      sell_price: 476000.0      ratio: 0.9821520685030435
 
 
 --------------------------------------------------
-   name: GRS        purchase_time: 2021-05-09 16:47:00.376263
-     purchase_price: 2320.0      sell_price: 2290.0      ratio: 0.9870689655172413
+   name: STRAX        purchase_time: 2021-05-11 03:57:14.199584
+     purchase_price: 5460.0      sell_price: 5400.0      ratio: 0.989010989010989
 
 
 --------------------------------------------------
-   name: GRS        purchase_time: 2021-05-09 19:54:28.034436
-     purchase_price: 2310.0      sell_price: 2285.0      ratio: 0.9891774891774892
+   name: KNC        purchase_time: 2021-05-11 04:15:10.914456
+     purchase_price: 4765.0      sell_price: 4445.0      ratio: 0.9328436516264428
 
 
 --------------------------------------------------
-   name: STRAX        purchase_time: 2021-05-09 19:17:25.285510
-     purchase_price: 5005.0      sell_price: 4940.0      ratio: 0.987012987012987
+   name: LTC        purchase_time: 2021-05-11 05:10:00.151811
+     purchase_price: 466200.0      sell_price: 461000.0      ratio: 0.9888459888459888
 
 
 --------------------------------------------------
-   name: ETC        purchase_time: 2021-05-09 20:53:27.349995
-     purchase_price: 152500.0      sell_price: 147150.0      ratio: 0.9639344262295082
+   name: ATOM        purchase_time: 2021-05-11 05:10:00.151811
+     purchase_price: 33210.0      sell_price: 32820.0      ratio: 0.988256549232159
 
 
 --------------------------------------------------
-   name: BSV        purchase_time: 2021-05-10 01:39:01.259140
-     purchase_price: 428000.0      sell_price: 423550.0      ratio: 0.9896028037383178
+   name: XRP        purchase_time: 2021-05-11 05:11:59.844270
+     purchase_price: 1820.0      sell_price: 1785.0      ratio: 0.9807692307692307
 
 
 --------------------------------------------------
-   name: LSK        purchase_time: 2021-05-10 09:09:13.967122
-     purchase_price: 11030.0      sell_price: 12230.0      ratio: 1.1115140525838623
+   name: STRAX        purchase_time: 2021-05-11 05:14:59.653218
+     purchase_price: 5330.0      sell_price: 5270.0      ratio: 0.9887429643527205
 
 
 --------------------------------------------------
-   name: LTC        purchase_time: 2021-05-10 09:06:12.903188
-     purchase_price: 503100.0      sell_price: 481650.0      ratio: 0.9573643410852714
+   name: KAVA        purchase_time: 2021-05-11 06:06:58.617679
+     purchase_price: 7500.0      sell_price: 7420.0      ratio: 0.9893333333333333
 
 
 --------------------------------------------------
-   name: BCHA        purchase_time: 2021-05-10 09:12:14.765635
-     purchase_price: 64710.0      sell_price: 64000.0      ratio: 0.9890279709473033
+   name: ONT        purchase_time: 2021-05-11 05:51:57.597539
+     purchase_price: 2990.0      sell_price: 2985.0      ratio: 0.9882943143812709
 
 
 --------------------------------------------------
-   name: STRAX        purchase_time: 2021-05-10 09:28:17.112930
-     purchase_price: 5240.0      sell_price: 5070.0      ratio: 0.9666030534351145
+   name: OMG        purchase_time: 2021-05-11 05:10:59.961510
+     purchase_price: 13000.0      sell_price: 12890.0      ratio: 0.9884615384615385
 
 
 --------------------------------------------------
-   name: LSK        purchase_time: 2021-05-10 10:00:17.370563
-     purchase_price: 12570.0      sell_price: 12010.0      ratio: 0.9554494828957836
+   name: NEO        purchase_time: 2021-05-11 05:51:57.597539
+     purchase_price: 135650.0      sell_price: 134350.0      ratio: 0.989679321784003
 
 
 --------------------------------------------------
-   name: GRS        purchase_time: 2021-05-10 16:06:10.199922
-     purchase_price: 2160.0      sell_price: 2050.0      ratio: 0.9490740740740741
+   name: SSX        purchase_time: 2021-05-11 07:30:00.772934
+     purchase_price: 126.0      sell_price: 121.0      ratio: 0.9603174603174603
 
 
 --------------------------------------------------
-   name: AERGO        purchase_time: 2021-05-10 18:26:07.712177
-     purchase_price: 355.0      sell_price: 345.0      ratio: 0.971830985915493
+   name: QTUM        purchase_time: 2021-05-11 05:51:57.597539
+     purchase_price: 30270.0      sell_price: 29980.0      ratio: 0.9897588371324744
 
 
 --------------------------------------------------
-   name: TSHP        purchase_time: 2021-05-10 21:18:08.240907
-     purchase_price: 25.0      sell_price: 23.9      ratio: 0.956
+   name: ADA        purchase_time: 2021-05-11 05:51:57.597539
+     purchase_price: 2110.0      sell_price: 2085.0      ratio: 0.9881516587677726
+
+
+--------------------------------------------------
+   name: LINK        purchase_time: 2021-05-11 05:51:57.597539
+     purchase_price: 59050.0      sell_price: 58430.0      ratio: 0.9889923793395428
+
+
+--------------------------------------------------
+   name: EOS        purchase_time: 2021-05-11 05:51:57.597539
+     purchase_price: 11650.0      sell_price: 11540.0      ratio: 0.9896995708154507
+
+
+--------------------------------------------------
+   name: LSK        purchase_time: 2021-05-11 08:58:06.337620
+     purchase_price: 10920.0      sell_price: 10530.0      ratio: 0.9642857142857143
+
+
+--------------------------------------------------
+   name: STRK        purchase_time: 2021-05-11 09:02:07.871851
+     purchase_price: 66100.0      sell_price: 62870.0      ratio: 0.951285930408472
+
+
+--------------------------------------------------
+   name: OBSR        purchase_time: 2021-05-11 09:03:07.658241
+     purchase_price: 27.4      sell_price: 25.3      ratio: 0.9233576642335767
+
+
+--------------------------------------------------
+   name: LBC        purchase_time: 2021-05-11 09:03:07.658241
+     purchase_price: 195.0      sell_price: 191.0      ratio: 0.9794871794871794
 
 
